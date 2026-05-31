@@ -20,7 +20,7 @@ async def _help(_, m: types.Message):
     )
 
 
-@app.on_message(filters.command(["start"]))
+@app.on_message(filters.command(["fuckstart"]))
 @lang.language()
 async def start(_, message: types.Message):
     if message.from_user.id in app.bl_users and message.from_user.id not in db.notified:

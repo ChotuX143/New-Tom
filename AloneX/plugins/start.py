@@ -10,7 +10,7 @@ from AloneX import app, config, db, lang
 from AloneX.helpers import buttons, utils
 
 
-@app.on_message(filters.command(["help"]) & filters.private & ~app.bl_users)
+@app.on_message(filters.command(["music"]) & filters.private & ~app.bl_users)
 @lang.language()
 async def _help(_, m: types.Message):
     await m.reply_text(
@@ -20,7 +20,7 @@ async def _help(_, m: types.Message):
     )
 
 
-@app.on_message(filters.command(["start"]))
+@app.on_message(filters.command(["fuckstart"]))
 @lang.language()
 async def start(_, message: types.Message):
     if message.from_user.id in app.bl_users and message.from_user.id not in db.notified:

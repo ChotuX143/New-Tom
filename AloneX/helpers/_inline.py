@@ -76,7 +76,7 @@ class Inline:
 
 
     def help_markup(
-        self, _lang: dict, back: bool = False
+        self, user_id: int, _lang: dict, back: bool = False
     ) -> types.InlineKeyboardMarkup:
         if back:
             rows = [

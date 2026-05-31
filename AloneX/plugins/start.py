@@ -47,12 +47,12 @@ async def start(_, message: types.Message):
     if private:
         if await db.is_user(message.from_user.id):
             return
-        await utils.send_log(message)
+        # await utils.send_log(message)
         await db.add_user(message.from_user.id)
     else:
         if await db.is_chat(message.chat.id):
             return
-        await utils.send_log(message, True)
+        # await utils.send_log(message, True)
         await db.add_chat(message.chat.id)
 
 
@@ -82,5 +82,5 @@ async def _new_member(_, message: types.Message):
         if member.id == app.id:
             if await db.is_chat(message.chat.id):
                 return
-            await utils.send_log(message, True)
+            # await utils.send_log(message, True)
             await db.add_chat(message.chat.id)

@@ -21,6 +21,7 @@ class Inline:
     def controls(
         self,
         chat_id: int,
+        user_id: int,
         status: str = None,
         timer: str = None,
         remove: bool = False,

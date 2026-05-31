@@ -116,7 +116,7 @@ async def _controls(_, query: types.CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("help") & ~app.bl_users)
+@app.on_callback_query(filters.regex("alone_settings_back_helper") & ~app.bl_users)
 @lang.language()
 async def _help(_, query: types.CallbackQuery):
     data = query.data.split()
@@ -161,7 +161,7 @@ async def _help(_, query: types.CallbackQuery):
         )
 
 
-@app.on_callback_query(filters.regex("settings_back_helper") & ~app.bl_users)
+@app.on_callback_query(filters.regex("alone_settings_back_helper") & ~app.bl_users)
 @lang.language()
 async def _back_helper(_, query: types.CallbackQuery):
     private = query.message.chat.type == enums.ChatType.PRIVATE

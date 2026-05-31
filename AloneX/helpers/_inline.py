@@ -94,7 +94,7 @@ class Inline:
             rows = [buttons[i : i + 3] for i in range(0, len(buttons), 3)]
             rows.append(
                 [
-                    self.ikb(text=_lang["back"], callback_data="settings_back_helper", style=ButtonStyle.PRIMARY),
+                    self.ikb(text=_lang["back"], callback_data=f"back_{user_id}", style=ButtonStyle.PRIMARY),
                     self.ikb(text=_lang["close"], callback_data="settings_back_helper close", style=ButtonStyle.PRIMARY),
                 ]
             )

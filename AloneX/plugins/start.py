@@ -15,7 +15,7 @@ from AloneX.helpers import buttons, utils
 async def _help(_, m: types.Message):
     await m.reply_text(
         text=m.lang["help_menu"],
-        reply_markup=buttons.help_markup(m.lang),
+        reply_markup=buttons.help_markup(m.lang, user_id=m.from_user.id),
         quote=True,
     )
 
@@ -30,19 +30,19 @@ async def start(_, message: types.Message):
         return await _help(_, message)
 
     private = message.chat.type == enums.ChatType.PRIVATE
-    _text = (
-        message.lang["start_pm"].format(message.from_user.first_name, app.name)
-        if private
-        else message.lang["start_gp"].format(app.name)
-    )
+    # _text = (
+    #    message.lang["start_pm"].format(message.from_user.first_name, app.name)
+    #    if private
+    #    else message.lang["start_gp"].format(app.name)
+    # )
 
-    key = buttons.start_key(message.lang, private)
-    await message.reply_photo(
-        photo=config.START_IMG,
-        caption=_text,
-        reply_markup=key,
-        quote=not private,
-    )
+    # key = buttons.start_key(message.lang, private)
+    # await message.reply_photo(
+    #    photo=config.START_IMG,
+    #    caption=_text,
+    #    reply_markup=key,
+    #    quote=not private,
+    # )
 
     if private:
         if await db.is_user(message.from_user.id):

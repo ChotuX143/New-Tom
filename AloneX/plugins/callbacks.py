@@ -116,7 +116,7 @@ async def _controls(_, query: types.CallbackQuery):
         pass
 
 
-@app.on_callback_query(filters.regex("^settings_back_helper") & ~app.bl_users)
+@app.on_callback_query(filters.regex("^(help|settings_back_helper)") & ~app.bl_users)
 @lang.language()
 async def _help(_, query: types.CallbackQuery):
     data = query.data.split()
@@ -145,9 +145,10 @@ async def _help(_, query: types.CallbackQuery):
     elif data[1] == "close":
         try:
             await query.message.delete()
-            return await query.message.reply_to_message.delete()
+            await query.message.reply_to_message.delete()
         except:
             pass
+        return
 
     try:
         await query.edit_message_text(

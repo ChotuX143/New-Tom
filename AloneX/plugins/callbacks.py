@@ -131,18 +131,23 @@ async def _help(_, query: types.CallbackQuery):
         except:
             return await query.edit_message_caption(
                 caption=query.lang["help_menu"],
-                reply_markup=buttons.help_markup(query.lang),
+               # reply_markup=buttons.help_markup(query.lang),
+                reply_markup=buttons.settings_back_helper_markup(query.lang),
             )
 
     if data[1] == "back":
         try:
             return await query.edit_message_text(
-                text=query.lang["help_menu"], reply_markup=buttons.help_markup(query.lang)
+                text=query.lang["help_menu"], 
+                #reply_markup=buttons.help_markup(query.lang),
+                reply_markup=buttons.settings_back_helper_markup(query.lang),
+                
             )
         except:
             return await query.edit_message_caption(
                 caption=query.lang["help_menu"],
-                reply_markup=buttons.help_markup(query.lang),
+                #reply_markup=buttons.help_markup(query.lang),
+                reply_markup=buttons.settings_back_helper_markup(query.lang),
             )
     elif data[1] == "close":
         try:
@@ -155,12 +160,14 @@ async def _help(_, query: types.CallbackQuery):
     try:
         await query.edit_message_text(
             text=query.lang[f"help_{data[1]}"],
-            reply_markup=buttons.help_markup(query.lang, True),
+            #reply_markup=buttons.help_markup(query.lang, True),
+            reply_markup=buttons.settings_back_helper_markup(query.lang, True),
         )
     except:
         await query.edit_message_caption(
             caption=query.lang[f"help_{data[1]}"],
-            reply_markup=buttons.help_markup(query.lang, True),
+         #   reply_markup=buttons.help_markup(query.lang, True),
+            reply_markup=buttons.settings_back_helper_markup(query.lang, True),
         )
 
 

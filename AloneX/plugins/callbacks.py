@@ -125,7 +125,8 @@ async def _help(_, query: types.CallbackQuery):
         try:
             return await query.edit_message_text(
                 text=query.lang["help_menu"],
-                reply_markup=buttons.help_markup(query.lang),
+               # reply_markup=buttons.help_markup(query.lang),
+                reply_markup=buttons.settings_back_helper_markup(query.lang),
             )
         except:
             return await query.edit_message_caption(

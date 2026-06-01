@@ -182,22 +182,21 @@ class Inline:
     ) -> types.InlineKeyboardMarkup:
         rows = [
             [
-                self.ikb(text="𝐄ɪᴋᴏ 𝐌ᴀɴᴀɢᴇᴍᴇɴᴛ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ", url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.PRIMARY
+                self.ikb(text="˹ 𝐄ɪᴋᴏ 𝐌ᴀɴᴀɢᴇᴍᴇɴᴛ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ ˼", url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.SUCCESS
                 )
             ],
-            [self.ikb(text="𝐄ɪᴋᴏ 𝐌ᴜꜱɪᴄ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ", url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.PRIMARY)],
+            [self.ikb(text="˹ 𝐄ɪᴋᴏ 𝐌ᴜꜱɪᴄ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ ˼", url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.PRIMARY)],
             [
-                self.ikb(text=lang["support"], url=config.SUPPORT_CHAT, style=ButtonStyle.SUCCESS),
-                self.ikb(text=lang["channel"], url=config.SUPPORT_CHANNEL, style=ButtonStyle.SUCCESS),
+                self.ikb(text="˹ 𝐉ᴏɪɴ 𝐀ʟᴏɴᴇ 𝐀ʟʟ 𝐁ᴏᴛꜱ & 𝐒ᴏᴜʀᴄᴇ 𝐔ᴩᴅᴀᴛᴇꜱ ˼", url=config.SUPPORT_CHANNEL, style=ButtonStyle.SUCCESS),
             ],
         ]
         if private:
             rows += [
                 [
-                    self.ikb(text=lang["aloneowner"], user_id=8458947967, style=ButtonStyle.DANGER),
-                    self.ikb(
-                        text=lang["source"],
-                        url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.DANGER
+                    self.ikb(text="˹ 𝐒ᴏᴜʀᴄᴇ 𝐃ᴇᴠᴏʟᴏᴩᴇʀ - 𝐀ʟᴏɴᴇ 𝐂ᴏᴅᴇʀ ˼", user_id=8458947967, style=ButtonStyle.DANGER
+                    #self.ikb(
+                      #  text=lang["source"],
+                      #  url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.DANGER
                     )
                 ]
             ]

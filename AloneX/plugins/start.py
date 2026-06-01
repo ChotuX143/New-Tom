@@ -9,6 +9,14 @@ from pyrogram import enums, filters, types
 from AloneX import app, config, db, lang
 from AloneX.helpers import buttons, utils
 
+# Start messages
+START_PM_TEXT = (
+    "<b>──「 𝔼𝕀𝕂𝕆 𝔹𝕆𝕋 ℝ𝔼ℙ𝕆 」──</b>\n\n"
+    "<blockquote><b>𝐄ɪᴋᴏ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ 𝐍ᴏᴡ 𝐏ᴜʙʟɪᴄ.</b></blockquote>\n"
+    "<blockquote><b>𝐕ᴩꜱ & 𝐇ᴇʀᴏᴋᴜ 𝐃ᴏɴᴏ 𝐒ᴜᴩᴩᴏʀᴛᴇᴅ.</b></blockquote>\n"
+    "<blockquote><b><u>𝐍ᴏᴛᴇ : 𝐃ᴏɴᴏ 𝐑ᴇᴩᴏ 𝐇ᴏꜱᴛ 𝐊ᴀʀɴᴀ 𝐏ᴀᴅᴇɢᴀ 𝐀ɢᴀʀ 𝐃ᴏɴᴏ 𝐇ᴏꜱᴛ 𝐍ᴀʜɪ 𝐊ᴀʀᴀ 𝐓ᴏ 𝐌ᴜꜱɪᴄ 𝐒ʏꜱᴛᴀʏᴍ 𝐊ᴀᴀᴍ 𝐍ᴀʜɪ 𝐊ᴀʀᴇɢᴀ.</u></b></blockquote>"
+)
+
 
 @app.on_message(filters.command(["music"]) & filters.private & ~app.bl_users)
 @lang.language()
@@ -30,8 +38,7 @@ async def start(_, message: types.Message):
         return await _help(_, message)
 
     private = message.chat.type == enums.ChatType.PRIVATE
-    _text = (
-        message.lang["start_pm"].format(message.from_user.first_name, app.name)
+    _text = START_PM_TEXT.format(message.from_user.first_name, app.name)
         if private
         else message.lang["start_gp"].format(app.name)
     )

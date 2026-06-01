@@ -38,9 +38,10 @@ async def start(_, message: types.Message):
         return await _help(_, message)
 
     private = message.chat.type == enums.ChatType.PRIVATE
-    _text = START_PM_TEXT.format(message.from_user.first_name, app.name)
+    _text = (
+        START_PM_TEXT.format(message.from_user.first_name, app.name)
         if private
-        _text = START_PM_TEXT.format(app.name)
+        else START_PM_TEXT.format(app.name)
     )
 
     key = buttons.start_key(message.lang, private)

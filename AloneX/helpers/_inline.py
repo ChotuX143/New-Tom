@@ -182,12 +182,12 @@ class Inline:
     ) -> types.InlineKeyboardMarkup:
         rows = [
             [
-                self.ikb(text="˹ 𝐄ɪᴋᴏ 𝐌ᴀɴᴀɢᴇᴍᴇɴᴛ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ ˼", url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.SUCCESS
+                self.ikb(text="˹ 𝐄ɪᴋᴏ 𝐌ᴀɴᴀɢᴇᴍᴇɴᴛ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ ˼", url="https://github.com/TeamAloneOp/EikoRobot", style=ButtonStyle.SUCCESS
                 )
             ],
-            [self.ikb(text="˹ 𝐄ɪᴋᴏ 𝐌ᴜꜱɪᴄ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ ˼", url="https://github.com/TeamAloneOp/AloneX", style=ButtonStyle.PRIMARY)],
+            [self.ikb(text="˹ 𝐄ɪᴋᴏ 𝐌ᴜꜱɪᴄ 𝐁ᴏᴛ 𝐑ᴇᴩᴏ ˼", url="https://github.com/TeamAloneOp/EikoMusic", style=ButtonStyle.PRIMARY)],
             [
-                self.ikb(text="˹ 𝐉ᴏɪɴ 𝐀ʟᴏɴᴇ 𝐀ʟʟ 𝐁ᴏᴛꜱ & 𝐒ᴏᴜʀᴄᴇ 𝐔ᴩᴅᴀᴛᴇꜱ ˼", url=config.SUPPORT_CHANNEL, style=ButtonStyle.SUCCESS),
+                self.ikb(text="˹ 𝐉ᴏɪɴ 𝐀ʟᴏɴᴇ 𝐀ʟʟ 𝐁ᴏᴛꜱ & 𝐒ᴏᴜʀᴄᴇ 𝐔ᴩᴅᴀᴛᴇꜱ ˼", url="https://t.me/AloneUpdates", style=ButtonStyle.SUCCESS),
             ],
         ]
         if private:
